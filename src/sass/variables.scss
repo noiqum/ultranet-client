@@ -1,0 +1,17 @@
+$dark-bg: #151728;
+$light-grey: #b4b5c6;
+$grey: #5c5e6e;
+$dark-grey: #3a3c4f;
+$blue: #1b86f9;
+$link-blue: #1771d6;
+$noti-blue: #1b86f8;
+$online-green: #7fd222;
+$offline-grey: #606a8d;
+$busy-red: #dd1c20;
+
+@mixin font-dm {
+  font-family: "DM Sans", sans-serif;
+}
+@mixin font-pro {
+  font-family: "Source Sans Pro", sans-serif;
+}
