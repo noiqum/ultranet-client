@@ -1,7 +1,5 @@
 import { screen, render } from "@testing-library/react";
 import userevent from "@testing-library/user-event";
-
-import * as react from "react";
 import Login from "./login";
 
 describe("Login", () => {
@@ -25,5 +23,15 @@ describe("Login", () => {
     render(<Login />);
     const password = screen.getByLabelText(/password/i);
     expect(password).toBeInTheDocument();
+  });
+  test("form has login button", () => {
+    render(<Login />);
+    const loginBtn = screen.getByRole("button", { name: /login/i });
+    expect(loginBtn).toBeInTheDocument();
+  });
+  test("page renders register button", () => {
+    render(<Login />);
+    const registerBtn = screen.getByRole("button", { name: /register/i });
+    expect(registerBtn).toBeInTheDocument();
   });
 });
