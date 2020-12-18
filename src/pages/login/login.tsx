@@ -2,20 +2,25 @@ import { useMutation } from "@apollo/client";
 import * as React from "react";
 import { ReactComponent as Loader } from "../../svg/loader.svg";
 import { gql } from "@apollo/client";
+import { useHistory } from "react-router-dom";
 
 const Login: React.FC = () => {
   interface IFormData {
     email: string;
     password: string;
   }
+
   interface IError {
     [key: string]: any;
   }
+
+  //////states////////
 
   const [formData, setFormData] = React.useState<IFormData>({
     email: "",
     password: "",
   });
+
   const [error, setError] = React.useState<IError>({
     exception: {
       errors: {
@@ -25,6 +30,8 @@ const Login: React.FC = () => {
       },
     },
   });
+
+  //////queries & mutations ///////////
 
   const LOGIN = gql`
     mutation LoginUser($email: String!, $password: String!) {
@@ -36,6 +43,9 @@ const Login: React.FC = () => {
       }
     }
   `;
+
+  ///////hooks////////////
+
   const [login, loginResponse] = useMutation(LOGIN, {
     update(proxy, result) {
       console.log(result);
@@ -47,7 +57,14 @@ const Login: React.FC = () => {
     onError({ graphQLErrors }) {
       if (graphQLErrors[0].extensions) setError(graphQLErrors[0].extensions);
     },
+    onCompleted() {
+      history.push("/");
+    },
   });
+
+  const history = useHistory();
+
+  //////handlers//////////////////////
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -60,6 +77,11 @@ const Login: React.FC = () => {
     e.preventDefault();
     login();
   };
+
+  const registerHandler = () => {
+    history.push("/register");
+  };
+
   return (
     <div className="login">
       <div className="login__header">
@@ -99,7 +121,9 @@ const Login: React.FC = () => {
             {loginResponse.loading && <Loader />}
           </button>
         </form>
-        <button aria-label="register">create new account</button>
+        <button aria-label="register" onClick={registerHandler}>
+          create new account
+        </button>
       </div>
     </div>
   );
