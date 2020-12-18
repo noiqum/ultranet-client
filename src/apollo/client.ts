@@ -1,4 +1,4 @@
-import {ApolloClient,InMemoryCache,HttpLink,gql} from '@apollo/client'
+import {ApolloClient,InMemoryCache,HttpLink} from '@apollo/client'
 import URL from '../api/config';
 
 

@@ -65,6 +65,7 @@ const Login: React.FC = () => {
       <div className="login__header">
         <h3>Ultranet</h3>
         <p>broaden your life </p>
+        <p>connect and share </p>
       </div>
       <div className="login__form">
         {error.exception.errors.general && error.exception.errors.general}
@@ -98,8 +99,8 @@ const Login: React.FC = () => {
             {loginResponse.loading && <Loader />}
           </button>
         </form>
+        <button aria-label="register">create new account</button>
       </div>
-      <button aria-label="register">create new account</button>
     </div>
   );
 };

@@ -15,3 +15,9 @@ $busy-red: #dd1c20;
 @mixin font-pro {
   font-family: "Source Sans Pro", sans-serif;
 }
+@mixin center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
