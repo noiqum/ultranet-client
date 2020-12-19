@@ -90,7 +90,9 @@ const Login: React.FC = () => {
         <p>connect and share </p>
       </div>
       <div className="login__form">
-        {error.exception.errors.general && error.exception.errors.general}
+        {error.exception.errors.general && (
+          <span className="error">{error.exception.errors.general}</span>
+        )}
         <form name="login form" onSubmit={submitHandler}>
           <label htmlFor="email" className="login__form__label">
             email
@@ -102,7 +104,9 @@ const Login: React.FC = () => {
               onChange={inputHandler}
               value={formData.email}
             />
-            {error.exception.errors.email && error.exception.errors.email}
+            {error.exception.errors.email && (
+              <span className="error">{error.exception.errors.email}</span>
+            )}
           </label>
           <label htmlFor="password" className="login__form__label">
             password
@@ -114,7 +118,9 @@ const Login: React.FC = () => {
               onChange={inputHandler}
               value={formData.password}
             />
-            {error.exception.errors.password && error.exception.errors.password}
+            {error.exception.errors.password && (
+              <span className="error">{error.exception.errors.password}</span>
+            )}
           </label>
           <button aria-label="login">
             Log In

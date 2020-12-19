@@ -1,15 +1,20 @@
-import { screen, render } from "@testing-library/react";
+import { screen, render, cleanup } from "@testing-library/react";
 import userevent from "@testing-library/user-event";
 import Login from "./login";
 import { MemoryRouter } from "react-router-dom";
+import { ApolloProvider } from "@apollo/client";
+import client from "../../apollo/client";
 
 function setup() {
   render(
     <MemoryRouter>
-      <Login />
+      <ApolloProvider client={client}>
+        <Login />
+      </ApolloProvider>
     </MemoryRouter>
   );
 }
+afterEach(cleanup);
 
 describe("Login", () => {
   test("header section renders brand name", () => {
