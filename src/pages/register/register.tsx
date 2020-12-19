@@ -2,6 +2,7 @@ import * as React from "react";
 import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
 import { ReactComponent as Loader } from "../../svg/loader.svg";
+import Logo from "../../svg/favicon.png";
 
 const Register: React.FC = () => {
   interface IFormData {
@@ -85,6 +86,7 @@ const Register: React.FC = () => {
   return (
     <div className="register">
       <div className="register__header">
+        <img src={Logo} alt="logo" />
         <h3>Ultranet</h3>
       </div>
       <div className="register__form">
@@ -100,6 +102,7 @@ const Register: React.FC = () => {
               name="username"
               id="username"
               value={formData.username}
+              autoFocus
             />
             {error.exception.errors.username && (
               <span className="error">{error.exception.errors.username}</span>
