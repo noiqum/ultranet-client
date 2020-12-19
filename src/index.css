@@ -117,3 +117,5 @@ a {
       text-transform: capitalize; }
       .login__form > button:hover {
         background-color: #1670e5af; }
+  .login .error {
+    color: red; }
