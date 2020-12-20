@@ -6,13 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apollo/client";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import { GlobalProvider } from "./store/context/global.context";
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <GlobalProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </GlobalProvider>
     </Router>
   </ApolloProvider>,
   document.getElementById("root")

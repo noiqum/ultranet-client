@@ -3,6 +3,7 @@ import * as React from "react";
 import { ReactComponent as Loader } from "../../svg/loader.svg";
 import { gql } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { globalContext } from "../../store/context/global.context";
 
 const Login: React.FC = () => {
   interface IFormData {
@@ -46,9 +47,15 @@ const Login: React.FC = () => {
 
   ///////hooks////////////
 
+  const { dispatch } = React.useContext(globalContext);
+
   const [login, loginResponse] = useMutation(LOGIN, {
     update(proxy, result) {
-      console.log(result);
+      const user = result.data.login;
+      dispatch({
+        type: "USER_LOGIN",
+        user,
+      });
     },
     variables: {
       email: formData.email,
