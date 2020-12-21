@@ -212,25 +212,58 @@ a {
     color: red; }
 
 .main {
-  display: grid;
-  grid-template-columns: 20% 1fr 20%;
+  display: flex;
+  margin: 0 auto;
   width: 100%;
+  max-height: 1600px;
   min-height: 100vh; }
-  .main > .aside {
-    grid-column: 1/2; }
-  .main > .core {
-    grid-column: 2/3; }
-  .main > .friends {
-    grid-column: 3/4; }
 
 .aside {
-  width: 100%;
+  width: 260px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  flex-shrink: 0;
   min-height: 100%;
-  background-color: blue; }
+  background-color: #151728;
+  overflow: auto; }
+  .aside__logo {
+    font-size: 1.6rem;
+    line-height: 60px;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px; }
+  .aside__menu {
+    color: #5c5e6e;
+    font-size: 2rem;
+    font-family: "Source Sans Pro", sans-serif;
+    align-self: flex-start;
+    padding: 30px;
+    line-height: 1.15;
+    width: 100%; }
+    .aside__menu__title {
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-transform: uppercase; }
+    .aside__menu__list {
+      white-space: nowrap; }
+      .aside__menu__list-item {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer; }
+        .aside__menu__list-item:hover {
+          color: white; }
+          .aside__menu__list-item:hover > svg {
+            stroke: white; }
+  .aside svg {
+    width: 16px;
+    stroke: #5c5e6e;
+    margin-right: 16px; }
 
 .core {
   display: flex;

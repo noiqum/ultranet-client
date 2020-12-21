@@ -1,8 +1,57 @@
 @import "../../sass/variables.scss";
 
 .aside {
-  width: 100%;
-  @include center-column;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
   min-height: 100%;
-  background-color: blue;
+  background-color: $dark-bg;
+  overflow: auto;
+  &__logo {
+    font-size: 1.6rem;
+    line-height: 60px;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    @include font-dm;
+    font-weight: 700;
+    letter-spacing: 5px;
+  }
+  &__menu {
+    color: $grey;
+    font-size: 2rem;
+    @include font-pro;
+    align-self: flex-start;
+    padding: 30px;
+    line-height: 1.15;
+    width: 100%;
+    &__title {
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    &__list {
+      white-space: nowrap;
+      &-item {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          color: white;
+          & > svg {
+            stroke: white;
+          }
+        }
+      }
+    }
+  }
+  & svg {
+    width: 16px;
+    stroke: $grey;
+    margin-right: 16px;
+  }
 }
