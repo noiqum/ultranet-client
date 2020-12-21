@@ -1,0 +1,99 @@
+@import "../../sass/variables.scss";
+
+.aside-active {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 100%;
+  background-color: $dark-bg;
+  overflow: auto;
+  position: relative;
+  z-index: 4;
+  &__button {
+    @include center-column;
+    flex-shrink: 0;
+    height: 60px;
+    width: 100%;
+    min-width: 56px;
+    background-color: rgba(39, 42, 58, 0.5);
+    & > #hamburger,
+    & > #arrow {
+      width: 24px;
+      margin-right: unset;
+      stroke: white;
+    }
+
+    @media screen and (min-width: 930px) {
+      display: none;
+    }
+  }
+  &__logo {
+    font-size: 1.6rem;
+    line-height: 60px;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    @include font-dm;
+    font-weight: 700;
+    letter-spacing: 5px;
+    writing-mode: unset;
+    transform: unset;
+    transform-origin: unset;
+    justify-content: center;
+  }
+  &__menu {
+    color: $grey;
+    font-size: 2rem;
+    @include font-pro;
+    align-self: flex-start;
+    padding: 30px;
+    line-height: 1.15;
+    width: 100%;
+    opacity: 1;
+    &__title {
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    &__list {
+      white-space: nowrap;
+      &-item {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          color: white;
+          & > svg {
+            stroke: white;
+          }
+        }
+      }
+    }
+  }
+  & svg {
+    width: 16px;
+    stroke: $grey;
+    margin-right: 16px;
+  }
+}
+.overlay-active {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(36, 39, 59, 0.8);
+  pointer-events: all;
+  z-index: 3;
+}
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
