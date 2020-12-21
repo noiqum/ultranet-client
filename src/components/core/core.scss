@@ -1,0 +1,7 @@
+@import "../../sass/variables.scss";
+
+.core {
+  @include center-column;
+  width: 100%;
+  background-color: chocolate;
+}

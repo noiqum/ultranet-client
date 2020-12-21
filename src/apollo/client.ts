@@ -3,7 +3,7 @@ import URL from '../api/config';
 
 
 const link=new HttpLink({
-    uri:URL
+    uri:URL,
 });
 
 const cache=new InMemoryCache();

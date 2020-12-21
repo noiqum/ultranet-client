@@ -1,0 +1,7 @@
+@import "../../sass/variables.scss";
+
+.friends {
+  @include center-column;
+  width: 100%;
+  background-color: blueviolet;
+}

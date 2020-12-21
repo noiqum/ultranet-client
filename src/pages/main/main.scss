@@ -1,0 +1,17 @@
+@import "../../sass/variables.scss";
+
+.main {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  width: 100%;
+  min-height: 100vh;
+  & > .aside {
+    grid-column: 1/2;
+  }
+  & > .core {
+    grid-column: 2/3;
+  }
+  & > .friends {
+    grid-column: 3/4;
+  }
+}
