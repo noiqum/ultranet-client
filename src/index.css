@@ -303,7 +303,8 @@ a {
             margin-bottom: 20px;
             display: flex;
             align-items: center;
-            cursor: pointer; }
+            cursor: pointer;
+            text-transform: capitalize; }
             .aside__menu__list-item:hover {
               color: white; }
               .aside__menu__list-item:hover > svg {
@@ -392,7 +393,8 @@ a {
         margin-bottom: 20px;
         display: flex;
         align-items: center;
-        cursor: pointer; }
+        cursor: pointer;
+        text-transform: capitalize; }
         .aside-active__menu__list-item:hover {
           color: white; }
           .aside-active__menu__list-item:hover > svg {
