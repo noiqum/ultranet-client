@@ -52,6 +52,7 @@ const Login: React.FC = () => {
   const [login, loginResponse] = useMutation(LOGIN, {
     update(proxy, result) {
       const user = result.data.login;
+      localStorage.setItem("token", user.token);
       dispatch({
         type: "USER_LOGIN",
         user,
