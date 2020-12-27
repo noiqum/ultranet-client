@@ -16,6 +16,11 @@ a {
   cursor: pointer;
 }
 
+button {
+  border: none;
+  outline: none;
+}
+
 @import "../pages/login/login.scss";
 @import "../pages/register/register.scss";
 @import "../pages/main/main.scss";

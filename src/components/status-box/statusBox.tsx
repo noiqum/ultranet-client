@@ -93,12 +93,15 @@ const StatusBox: React.FC = () => {
         <div className="status-box__actions__links">
           <a href="undefined">
             <Friend />
+            People
           </a>
           <a href="undefined">
             <CheckIn />
+            Check In
           </a>
           <a href="undefined">
             <Emoji />
+            Mood
           </a>
         </div>
         <div className="status-box__actions__button">
