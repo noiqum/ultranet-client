@@ -4,42 +4,32 @@ import { ReactComponent as CheckIn } from "../../svg/checkIn.svg";
 import { ReactComponent as Emoji } from "../../svg/emoji.svg";
 import { ReactComponent as Friend } from "../../svg/friend.svg";
 import { gql, useMutation } from "@apollo/client";
-import { globalContext } from "../../store/context/global.context";
+// import { globalContext } from "../../store/context/global.context";
 
 const StatusBox: React.FC = () => {
-  const { state } = React.useContext(globalContext);
+  // const { state } = React.useContext(globalContext);
   const [option, setOption] = React.useState<EOption>(EOption.status);
   const [postData, setPostData] = React.useState<TPostData>({
     option: option,
     content: "",
-    userID: state.user.id,
-    username: state.user.username,
   });
   const CREATE_POST = gql`
-    mutation createPost(
-      $userID: String!
-      $username: String!
-      $option: String!
-      $content: String!
-    ) {
-      createPost(
-        postInput: {
-          userID: $userID
-          username: $username
-          option: $option
-          content: $content
-        }
-      ) {
+    mutation createPost($option: String!, $content: String!) {
+      createPost(postInput: { option: $option, content: $content }) {
         id
       }
     }
   `;
   const [createPost] = useMutation(CREATE_POST, {
     update(_, result) {
-      console.log("result", result);
+      console.log("result", result.data);
     },
     variables: {
-      postInput: { ...postData },
+      option: postData.option,
+      content: postData.content,
+    },
+    onError(error) {
+      console.log(error);
     },
   });
 

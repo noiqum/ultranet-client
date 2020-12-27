@@ -17,7 +17,5 @@ export enum EOption {
 
 export type TPostData={
     option:string;
-    userID:string | null;
-    username:string | null;
     content:string;
 }
