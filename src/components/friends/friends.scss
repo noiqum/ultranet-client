@@ -1,7 +1,29 @@
 @import "../../sass/variables.scss";
 
 .friends {
+  width: 56px;
+  height: 60px;
   @include center-column;
-  width: 100%;
-  background-color: blueviolet;
+  flex-shrink: 0;
+  background-color: $dark-grey;
+  &__button {
+    cursor: pointer;
+    & > svg {
+      stroke: white;
+    }
+  }
+  @media screen and (min-width: 1210px) {
+    @include center-column;
+    width: 280px;
+    height: 100%;
+    min-height: 100%;
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+    margin-left: auto;
+    background-color: $dark-bg;
+    &__button {
+      display: none;
+    }
+  }
 }

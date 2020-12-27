@@ -1,0 +1,65 @@
+@import "../../sass/variables.scss";
+
+.hero {
+  display: flex;
+  position: relative;
+  height: 40vh;
+  min-height: 250px;
+  max-height: 350px;
+  z-index: 1;
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    background-image: url("https://images.unsplash.com/photo-1508247967583-7d982ea01526?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(50px);
+    opacity: 0.7;
+  }
+  &__avatar {
+    top: -25px;
+    left: 50%;
+    bottom: 16px;
+    position: absolute;
+    transform: translatex(-50%);
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (min-width: 700px) {
+      top: unset;
+      left: 24px;
+      flex-direction: row;
+      transform: unset;
+    }
+    & > img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #151728;
+      display: inline-block;
+      @media screen and (min-width: 700px) {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}

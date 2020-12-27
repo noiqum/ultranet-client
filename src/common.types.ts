@@ -8,3 +8,16 @@ export type TUserType={
 export type TGlobalState={
     user:TUserType;
 }
+
+export enum EOption {
+    status="status",
+    photos="photos",
+    videos="videos"
+}
+
+export type TPostData={
+    option:string;
+    userID:string | null;
+    username:string | null;
+    content:string;
+}

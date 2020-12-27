@@ -2,6 +2,14 @@
 
 .core {
   @include center-column;
-  width: 100%;
-  background-color: chocolate;
+  flex-grow: 1;
+  background-color: $dark-bg;
+
+  &__container {
+    width: 100%;
+    padding: 20px;
+    flex-grow: 1;
+    overflow: auto;
+    background-color: #24273b;
+  }
 }

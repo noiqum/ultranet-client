@@ -9,7 +9,7 @@ const Friends: React.FC = () => {
     <>
       <div className={active ? "friends-active" : "friends"}>
         <div
-          className={active ? "aside-active__button" : "aside__button"}
+          className={active ? "friends-active__button" : "friends__button"}
           onClick={() => {
             setActive(!active);
           }}

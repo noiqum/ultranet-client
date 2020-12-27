@@ -1,0 +1,22 @@
+@import "../../sass/variables.scss";
+
+.timeline {
+  display: flex;
+  padding-top: 20px;
+  position: relative;
+  z-index: 2;
+  &__right {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding-left: 0;
+    @media screen and (min-width: 768px) {
+      padding-left: 20px;
+    }
+  }
+  &__left {
+    width: 310px;
+    flex-shrink: 0;
+    min-width: 310px;
+    max-width: 310px;
+  }
+}

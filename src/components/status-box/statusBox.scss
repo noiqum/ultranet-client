@@ -1,0 +1,68 @@
+@import "../../sass/variables.scss";
+
+.status-box {
+  background-color: $dark-bg;
+  border-radius: 4px;
+  &__menu {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    & > span {
+      display: inline-block;
+      font-size: 1.5rem;
+      padding: 10px 14px;
+      color: $status-menu;
+      line-height: 0.7;
+      @include font-dm;
+      font-weight: 500;
+      border-radius: 20px;
+      background-color: transparent;
+      margin-left: 1rem;
+      &.active {
+        color: white;
+        background-color: #2e2e40;
+      }
+    }
+    & > span:hover {
+      color: white;
+      background-color: #2e2e40;
+    }
+  }
+  &__main {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #272a3a;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    & > img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    & > textarea {
+      color: #5c5d71;
+      overflow: auto;
+      flex-grow: 1;
+      background-color: transparent;
+      border: none;
+      resize: none;
+      margin-top: 15px;
+      color: #fff;
+      max-width: calc(100% - 70px);
+    }
+  }
+  &__actions {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    &__links {
+      & svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
