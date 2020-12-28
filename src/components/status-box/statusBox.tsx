@@ -86,7 +86,10 @@ const StatusBox: React.FC = () => {
             onChange={changeHandler}
           />
         ) : (
-          <input type="file" />
+          <label htmlFor="file">
+            Choose a File
+            <input type="file" accept="image/*" />
+          </label>
         )}
       </div>
       <div className="status-box__actions">
