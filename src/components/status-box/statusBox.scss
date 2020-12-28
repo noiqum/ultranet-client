@@ -64,6 +64,12 @@
       & a {
         color: $status-menu;
         font-size: 1.6rem;
+        & > span {
+          display: none;
+          @media screen and (min-width: 1330px) {
+            display: inline-block;
+          }
+        }
       }
       & svg {
         width: 16px;

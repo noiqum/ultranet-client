@@ -587,6 +587,11 @@ button {
     .status-box__actions__links a {
       color: #ccc8db;
       font-size: 1.6rem; }
+      .status-box__actions__links a > span {
+        display: none; }
+        @media screen and (min-width: 1330px) {
+          .status-box__actions__links a > span {
+            display: inline-block; } }
     .status-box__actions__links svg {
       width: 16px;
       height: 16px;
@@ -611,7 +616,13 @@ button {
   display: flex;
   padding-top: 20px;
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  flex-wrap: wrap;
+  flex-direction: column-reverse; }
+  @media screen and (min-width: 768px) {
+    .timeline {
+      flex-wrap: unset;
+      flex-direction: unset; } }
   .timeline__right {
     flex-grow: 1;
     margin-bottom: 20px;

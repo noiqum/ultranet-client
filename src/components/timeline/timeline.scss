@@ -5,6 +5,12 @@
   padding-top: 20px;
   position: relative;
   z-index: 2;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  @media screen and (min-width: 768px) {
+    flex-wrap: unset;
+    flex-direction: unset;
+  }
   &__right {
     flex-grow: 1;
     margin-bottom: 20px;
