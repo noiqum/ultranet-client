@@ -1,0 +1,49 @@
+@import "../../sass/variables.scss";
+
+.intro-box {
+  background-color: $dark-bg;
+  border-radius: 4px;
+  padding: 20px;
+
+  &__title {
+    @include font-dm;
+    font-weight: 600;
+    color: #5c5e6e;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    &__btn {
+      background-color: #8f98a9;
+      box-shadow: -8px 0 0 0 #8f98a9, 8px 0 0 0 #8f98a9;
+      width: 5px;
+      height: 5px;
+      border: 0;
+      padding: 0;
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: 8px;
+    }
+  }
+  &__body {
+    font-size: 1.6rem;
+    line-height: 1.15;
+    &__item {
+      display: flex;
+      color: #c3c5d5;
+      margin-bottom: 1rem;
+      @include font-pro;
+      & svg {
+        stroke: #c3c5d5;
+        width: 16px;
+        margin-right: 10px;
+      }
+      & .link {
+        cursor: pointer;
+        margin-left: 6px;
+        color: #1771d6;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
