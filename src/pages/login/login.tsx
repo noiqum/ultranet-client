@@ -4,6 +4,7 @@ import { ReactComponent as Loader } from "../../svg/loader.svg";
 import { gql } from "@apollo/client";
 import { useHistory } from "react-router-dom";
 import { globalContext } from "../../store/context/global.context";
+import { stringify } from "querystring";
 
 const Login: React.FC = () => {
   interface IFormData {
@@ -53,6 +54,7 @@ const Login: React.FC = () => {
     update(proxy, result) {
       const user = result.data.login;
       localStorage.setItem("token", user.token);
+      localStorage.setItem("user", JSON.stringify(user));
       dispatch({
         type: "USER_LOGIN",
         user,

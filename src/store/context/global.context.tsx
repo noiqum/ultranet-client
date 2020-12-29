@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useReducer } from "react";
-import { JsxElement } from "typescript";
+
 import { TGlobalState, TUserType } from "../../common.types";
 import { userReducer } from "../reducer/userReducer";
 
