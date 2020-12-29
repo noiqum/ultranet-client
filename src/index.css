@@ -530,6 +530,17 @@ button {
         .hero__avatar > img {
           width: 150px;
           height: 150px; } }
+    .hero__avatar > div {
+      color: white;
+      font-weight: 600;
+      text-transform: capitalize;
+      font-size: 2.2rem;
+      margin-top: 2rem;
+      letter-spacing: 2px; }
+      @media screen and (min-width: 700px) {
+        .hero__avatar > div {
+          margin-left: 2rem;
+          margin-top: 0px; } }
 
 .status-box {
   background-color: #151728;

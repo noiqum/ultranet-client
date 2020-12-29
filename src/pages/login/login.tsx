@@ -4,7 +4,6 @@ import { ReactComponent as Loader } from "../../svg/loader.svg";
 import { gql } from "@apollo/client";
 import { useHistory } from "react-router-dom";
 import { globalContext } from "../../store/context/global.context";
-import { stringify } from "querystring";
 
 const Login: React.FC = () => {
   interface IFormData {
